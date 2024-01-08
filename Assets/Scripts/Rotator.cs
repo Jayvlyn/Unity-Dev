@@ -11,7 +11,7 @@ public class Rotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation *= Quaternion.AngleAxis(angle * Time.deltaTime, Vector3.up); 
+        transform.rotation *= Quaternion.AngleAxis(angle * Time.deltaTime, new Vector3(1,0,0)); 
         if(Input.GetKey(KeyCode.LeftShift))
         {
             transform.position += transform.forward * speed * Time.deltaTime;
