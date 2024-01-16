@@ -20,7 +20,8 @@ public class OrbitCamera : MonoBehaviour
     void Update()
     {
         yaw += Input.GetAxis("Mouse X") * sensitivity;
-        pitch += Input.GetAxis("Mouse Y") * sensitivity;
+        pitch += -Input.GetAxis("Mouse Y") * sensitivity;
+        pitch = Mathf.Clamp(pitch, -80, 80);
 
         Quaternion qyaw = Quaternion.AngleAxis(yaw, Vector3.up);
         Quaternion qpitch = Quaternion.AngleAxis(pitch, Vector3.right);
