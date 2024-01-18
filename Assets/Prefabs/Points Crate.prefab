@@ -150,3 +150,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupPrefab: {fileID: 1804206099813350, guid: 4dd02b5f854b6c84990fbeb810abffe4, type: 3}
   points: 4000
+  clip: {fileID: 8300000, guid: 68a34627ce6c1324a891b0dda7baee20, type: 3}

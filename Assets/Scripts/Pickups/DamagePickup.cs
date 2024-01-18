@@ -6,6 +6,7 @@ public class DamagePickup : MonoBehaviour
 {
     [SerializeField] GameObject pickupPrefab = null;
     [SerializeField] int damage = 50;
+    [SerializeField] AudioClip clip;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +15,7 @@ public class DamagePickup : MonoBehaviour
             player.TakeDamage(damage);
         }
 
+        SoundManager.Instance.PlaySound(clip);
         Destroy(gameObject);
         Instantiate(pickupPrefab, transform.position, Quaternion.identity);
     }
