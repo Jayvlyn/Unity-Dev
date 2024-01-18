@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] TMP_Text scoreText;
     [SerializeField] FloatVariable health;
     [SerializeField] PhysicsCharacterController characterController;
+    [SerializeField] GameObject startBarrier;
 
     [Header("Events")]
     [SerializeField] IntEvent scoreEvent = default;
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour
 
 	private void Start()
 	{
-        health.value = 5.5f;
+        health.value = 100f;
 	}
 
 	public void AddPoints(int points)
@@ -41,5 +42,6 @@ public class Player : MonoBehaviour
     private void OnStartGame()
     {
         characterController.enabled = true;
+        startBarrier.SetActive(false);
     }
 }

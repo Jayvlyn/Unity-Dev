@@ -8,7 +8,7 @@ public class Pickup : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        print(collision.gameObject.name);
+        //print(collision.gameObject.name);
     }
 
     private void OnTriggerEnter(Collider other)

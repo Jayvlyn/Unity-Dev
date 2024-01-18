@@ -93,6 +93,6 @@ public class GameManager : Singleton<GameManager>
 
     public void OnAddPoints(int points)
     {
-        print(points);
+        //print(points);
     }
 }
