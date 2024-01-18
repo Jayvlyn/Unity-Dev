@@ -8,7 +8,7 @@ public class IntVariable : ScriptableObject, ISerializationCallbackReceiver
 {
 	public int initialValue;
 
-	[NonSerialized] public int value;
+	public int value;
 
 	public void OnAfterDeserialize()
 	{

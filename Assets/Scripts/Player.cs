@@ -13,8 +13,9 @@ public class Player : MonoBehaviour
     [Header("Events")]
     [SerializeField] IntEvent scoreEvent = default;
     [SerializeField] VoidEvent gameStartEvent = default;
+    [SerializeField] IntEvent timePickupEvent = default;
 
-    int score = 0;
+    public int score = 0;
 
     public int Score {  
         get { return score; }
@@ -37,6 +38,21 @@ public class Player : MonoBehaviour
 	public void AddPoints(int points)
     {
         Score += points;
+    }
+
+    public void SetPoints(int points)
+    {
+        Score = points;
+    }
+
+    public void AddTime(int time)
+    {
+        timePickupEvent.RaiseEvent(time);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health.value -= damage;
     }
 
     private void OnStartGame()
