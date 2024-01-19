@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class DamageObstacle : MonoBehaviour
 {
-    [SerializeField] FloatVariable playerHealth;
-    [SerializeField] float damage = 10.0f;
+    [SerializeField] int damage = 10;
+    private Player p;
+
+    private void Start()
+    {
+        p = FindObjectOfType<Player>();   
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            playerHealth.value -= damage;
+            p.TakeDamage(damage);
         }
     }
 }

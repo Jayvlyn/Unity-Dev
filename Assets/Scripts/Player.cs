@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] FloatVariable health;
     [SerializeField] PhysicsCharacterController characterController;
     [SerializeField] GameObject startBarrier;
+    [SerializeField] AudioClip clip;
 
     [Header("Events")]
     [SerializeField] IntEvent scoreEvent = default;
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health.value -= damage;
+        SoundManager.Instance.PlaySound(clip);
     }
 
     private void OnStartGame()

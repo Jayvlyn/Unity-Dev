@@ -70,7 +70,6 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
-        Debug.Log(score.value);
 		switch (state)
 		{
 			case State.TITLE:
