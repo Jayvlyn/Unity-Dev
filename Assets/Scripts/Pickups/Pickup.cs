@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    [SerializeField] GameObject pickupPrefab = null;
-    [SerializeField] int points = 4000;
-    [SerializeField] AudioClip clip;
+    [SerializeField] protected GameObject pickupPrefab = null;
+    [SerializeField] protected int points = 4000;
+    [SerializeField] protected AudioClip clip;
 
-    private void OnTriggerEnter(Collider other)
+    public MeshRenderer mesh;
+    public bool pickedUp;
+
+	private void Awake()
+	{
+		mesh = GetComponent<MeshRenderer>();
+	}
+
+	protected virtual void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent(out Player player))
+        if (other.gameObject.TryGetComponent(out Player player) && !pickedUp)
         {
             player.AddPoints(points);
+            SoundManager.Instance.PlaySound(clip);
+            mesh.enabled = false;
+            pickedUp = true;
+            Instantiate(pickupPrefab, transform.position, Quaternion.identity);
         }
-
-        SoundManager.Instance.PlaySound(clip);
-        Destroy(gameObject);
-        Instantiate(pickupPrefab, transform.position, Quaternion.identity);
     }
 }

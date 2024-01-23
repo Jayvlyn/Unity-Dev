@@ -1,20 +1,15 @@
 using UnityEngine;
 
-public class TimePickup : MonoBehaviour
+public class TimePickup : Pickup
 {
-    [SerializeField] GameObject pickupPrefab = null;
     [SerializeField] int time = 5;
-    [SerializeField] AudioClip clip;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent(out Player player))
+        if (other.gameObject.TryGetComponent(out Player player) && !pickedUp)
         {
             player.AddTime(time);
         }
-
-        SoundManager.Instance.PlaySound(clip);
-        Destroy(gameObject);
-        Instantiate(pickupPrefab, transform.position, Quaternion.identity);
+        base.OnTriggerEnter(other);
     }
 }
