@@ -14,7 +14,9 @@ public class SplineFollower : MonoBehaviour
     //public float speed { get; set; }
 
     // length in world coordinates
-    public float length { get { return splineContainer.CalculateLength(); } }
+    public float length { 
+        get { return splineContainer.CalculateLength(); } 
+    }
 
     // distance in world coordinates
     public float distance { 
