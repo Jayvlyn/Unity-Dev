@@ -17,13 +17,13 @@ MonoBehaviour:
   icon: {fileID: 0}
   allowMultiple: 0
   equipable: 0
-  usageType: 0
+  usageType: 1
   animTriggerName: 
   animEquipName: 
   rigLayerWeight: []
   itemPrefab: {fileID: 0}
   pickupPrefab: {fileID: 0}
-  fireRate: 0
+  fireRate: 0.2
   spread: {x: 0.1, y: 0.1, z: 0.1}
   rounds: 0
-  ammoPrefab: {fileID: 0}
+  ammoPrefab: {fileID: 2477539882397586068, guid: acec346bc0003034b9faed3444b751ea, type: 3}
