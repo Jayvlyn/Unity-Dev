@@ -10,4 +10,9 @@ public class ProjectileAmmo : Ammo
         if (ammoData.force != 0) GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * ammoData.force, ammoData.forceMode);
         Destroy(gameObject, ammoData.lifetime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        OnDamage(other.gameObject);
+    }
 }

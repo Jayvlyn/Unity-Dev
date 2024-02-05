@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KinematicController : MonoBehaviour, IDamagable
 {
-    [SerializeField,Range(0,40)] float speed = 1;
+    [SerializeField,Range(0,40)] public float speed = 1;
 	[SerializeField] float maxDistance = 5;
 	public float health = 100;
 

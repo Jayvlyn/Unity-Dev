@@ -6,6 +6,7 @@ public class SpawnerVolume : Spawner
 {
 	[Header("Volume")]
 	[SerializeField] Collider volume;
+	[SerializeField] bool autoSpawn = false;
 
 	public override void Spawn()
 	{
@@ -29,5 +30,7 @@ public class SpawnerVolume : Spawner
 		Spawn(spawnGameObject, position, transform.rotation);
 
 	}
+
+
 
 }
