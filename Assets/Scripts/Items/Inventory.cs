@@ -13,6 +13,22 @@ public class Inventory : MonoBehaviour
         currentItem.Equip();
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            if(currentItem == items[0])
+            {
+                currentItem = items[1];
+            }
+            else
+            {
+                currentItem = items[0];
+            }
+            currentItem.Equip();
+        }
+    }
+
     public void Use()
     {
         currentItem?.Use();

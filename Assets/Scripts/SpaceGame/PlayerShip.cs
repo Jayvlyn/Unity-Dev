@@ -18,7 +18,7 @@ public class PlayerShip : MonoBehaviour
         {
             inventory.Use();
         }
-        if(Input.GetButtonUp("Fire1"))
+        if(Input.GetButtonUp("Fire1") || Input.GetKeyDown(KeyCode.Tab))
         {
             inventory.OnStopUse();
         }

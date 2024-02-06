@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694fca17f6cd9e1418fcf8bad2f178e2, type: 3}
+  m_Name: LaserAmmo
+  m_EditorClassIdentifier: 
+  ammoType: 0
+  lifetime: 4
+  damage: 20
+  destroyOnImpact: 1
+  impactPrefab: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
+  force: 60
+  forceMode: 2
+  damageOverTime: 0
+  bounce: 0
+  rotateToVelocity: 0
+  impactOnExpired: 0
+  distance: 0
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 0

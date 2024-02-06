@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 6269103390569951248}
   - component: {fileID: 8057794096011903660}
   - component: {fileID: 5714566388483156727}
+  - component: {fileID: 8262645361484658507}
   - component: {fileID: 3894230460849696854}
   m_Layer: 3
   m_Name: The Firefly
@@ -189,6 +190,21 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: ca99c300ceba74a4c8f136e8983fa8c3, type: 2}
   animator: {fileID: 0}
   ammoTransform: {fileID: 6121911172645096033}
+--- !u!114 &8262645361484658507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4702951252847002428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4d71d0f3f23e14b92e8719e71d3216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 7e0462070562a0b4a96339132299f3ff, type: 2}
+  animator: {fileID: 0}
+  ammoTransform: {fileID: 5980296238934366853}
 --- !u!114 &3894230460849696854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +219,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 5714566388483156727}
+  - {fileID: 8262645361484658507}
+--- !u!1 &7591989047156923109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5980296238934366853}
+  m_Layer: 3
+  m_Name: Firepoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5980296238934366853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7591989047156923109}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.00000040052848, y: -0.020532938, z: 0.000000053377082, w: 0.9997892}
+  m_LocalPosition: {x: -2.52, y: -0.23785293, z: 7.17}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 717443303509698112}
+  m_LocalEulerAnglesHint: {x: 0, y: -2.353, z: 0}
 --- !u!1001 &713236485185173948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -292,6 +340,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4840255410855932, guid: fb3ddbd3e49630145a54fd458b731d1f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6121911172645096033}
+    - targetCorrespondingSourceObject: {fileID: 4840255410855932, guid: fb3ddbd3e49630145a54fd458b731d1f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5980296238934366853}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1304531895744914, guid: fb3ddbd3e49630145a54fd458b731d1f, type: 3}
       insertIndex: 1
