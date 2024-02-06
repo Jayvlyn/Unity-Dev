@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Weapon : Item
 {
-	[SerializeField] WeaponData weaponData;
+	[SerializeField] public WeaponData weaponData;
 	[SerializeField] Animator animator;
 	//[SerializeField] RigBuilder rigBuilder;
 	[SerializeField] Transform ammoTransform;

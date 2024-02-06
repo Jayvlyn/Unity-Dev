@@ -14,6 +14,6 @@ public class SoundManager : Singleton<SoundManager>
 
     public void PlaySound(AudioClip sound)
     {
-        source.PlayOneShot(sound);
+        if(source != null)source.PlayOneShot(sound);
     }
 }

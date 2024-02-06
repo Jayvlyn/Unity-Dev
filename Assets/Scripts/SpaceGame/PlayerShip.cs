@@ -26,13 +26,13 @@ public class PlayerShip : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(destroyEffect, this.transform, false);
-        StartCoroutine(RestartTimer());
-        rend.enabled = false;
-        sf.speed = 1f;
-        foreach(GameObject trail in trails)
+        if(other.TryGetComponent(out SpacePickup spacePickup))
         {
-            Destroy(trail);
+
+        }
+        else
+        {
+            Death();
         }
     }
 
@@ -41,4 +41,16 @@ public class PlayerShip : MonoBehaviour
         yield return new WaitForSeconds(respawnTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    private void Death()
+    {
+		Instantiate(destroyEffect, this.transform, false);
+		StartCoroutine(RestartTimer());
+		rend.enabled = false;
+		sf.speed = 1f;
+		foreach (GameObject trail in trails)
+		{
+			Destroy(trail);
+		}
+	}
 }
