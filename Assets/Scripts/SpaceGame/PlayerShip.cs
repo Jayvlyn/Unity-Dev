@@ -7,10 +7,12 @@ public class PlayerShip : MonoBehaviour
 {
     [SerializeField] private Inventory inventory;
     [SerializeField] private GameObject destroyEffect;
-    [SerializeField] private float respawnTime = 3;
+	[SerializeField] private AudioSource destroySound;
+	[SerializeField] private float respawnTime = 3;
     [SerializeField] SplineFollower sf;
     [SerializeField] MeshRenderer rend;
     [SerializeField] GameObject[] trails;
+
 
     private void Update()
     {
@@ -32,7 +34,7 @@ public class PlayerShip : MonoBehaviour
         }
         else
         {
-            Death();
+			Death();
         }
     }
 
@@ -44,6 +46,7 @@ public class PlayerShip : MonoBehaviour
 
     private void Death()
     {
+		destroySound.Play();
 		Instantiate(destroyEffect, this.transform, false);
 		StartCoroutine(RestartTimer());
 		rend.enabled = false;

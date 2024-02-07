@@ -6,6 +6,7 @@ public class EnemyShip : MonoBehaviour, IDamagable
 {
     [SerializeField] float health = 100;
     [SerializeField] private GameObject destroyEffect;
+    [SerializeField] private AudioSource destroySound;
 
     public void ApplyDamage(float damage)
     {
@@ -13,6 +14,7 @@ public class EnemyShip : MonoBehaviour, IDamagable
 
         if (health <= 0)
         {
+            destroySound.Play();
             Instantiate(destroyEffect, transform, false);
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<SphereCollider>().enabled = false;
