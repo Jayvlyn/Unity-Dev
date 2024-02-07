@@ -5,19 +5,45 @@ using UnityEngine;
 public class EnemyShip : MonoBehaviour, IDamagable
 {
     [SerializeField] float health = 100;
+    [SerializeField] private int points;
+    [SerializeField] private IntEvent scoreEvent;
     [SerializeField] private GameObject destroyEffect;
     [SerializeField] private AudioSource destroySound;
 
-    public void ApplyDamage(float damage)
+    [SerializeField] Weapon weapon;
+    [SerializeField] private float maxFireRate;
+    [SerializeField] private float minFireRate;
+
+	private void Start()
+	{
+        if(weapon != null)
+        {
+            weapon.Equip();
+            StartCoroutine(FireTimerCR());
+        }
+	}
+
+	public void ApplyDamage(float damage)
     {
         health -= damage;
 
         if (health <= 0)
         {
+            // Points
+            scoreEvent?.RaiseEvent(points);
+
+            // destroy ship
             destroySound.Play();
             Instantiate(destroyEffect, transform, false);
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<SphereCollider>().enabled = false;
         }       
+    }
+
+    IEnumerator FireTimerCR()
+    {
+        float time = Random.Range(minFireRate, maxFireRate);
+        yield return new WaitForSeconds(time);
+        weapon.Use();
     }
 }

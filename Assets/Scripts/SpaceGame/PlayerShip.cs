@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerShip : MonoBehaviour
+public class PlayerShip : MonoBehaviour, IDamagable
 {
     [SerializeField] private Inventory inventory;
     [SerializeField] private GameObject destroyEffect;
@@ -13,8 +14,21 @@ public class PlayerShip : MonoBehaviour
     [SerializeField] MeshRenderer rend;
     [SerializeField] GameObject[] trails;
 
+    [SerializeField] IntEvent scoreEvent;
 
-    private void Update()
+    [SerializeField] private IntVariable score;
+    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] FloatVariable health;
+
+
+	private void Start()
+	{
+        scoreEvent.Subscribe(AddPoints);
+        health.value = 100;
+	}
+
+
+	private void Update()
     {
         if(Input.GetButtonDown("Fire1"))
         {
@@ -28,15 +42,8 @@ public class PlayerShip : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out SpacePickup spacePickup))
-        {
 
-        }
-        else
-        {
-			Death();
-        }
-    }
+	}
 
     private IEnumerator RestartTimer()
     {
@@ -54,6 +61,22 @@ public class PlayerShip : MonoBehaviour
 		foreach (GameObject trail in trails)
 		{
 			Destroy(trail);
+		}
+	}
+
+    public void AddPoints(int points)
+    {
+        score.value += points;
+        scoreText.text = "Score: " + score.value.ToString();
+    }
+
+	public void ApplyDamage(float damage)
+	{
+		health.value -= damage;
+
+		if (health.value <= 0)
+		{
+            Death();
 		}
 	}
 }

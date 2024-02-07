@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33200093750143936}
   - component: {fileID: 23860522421899880}
   - component: {fileID: 1673794515411934082}
+  - component: {fileID: 6521192218286555803}
   - component: {fileID: 3052243716888542678}
   - component: {fileID: 1741166469394831728}
   m_Layer: 0
@@ -33,7 +34,8 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7703280683908287722}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33200093750143936
@@ -107,6 +109,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 4.9969234
   m_Center: {x: 0.000003840352, y: -0.40110707, z: 1.4768039}
+--- !u!114 &6521192218286555803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721860369327728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4d71d0f3f23e14b92e8719e71d3216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: dba3fa1c94b00c046a415bf03ef21ee1, type: 2}
+  animator: {fileID: 0}
+  ammoTransform: {fileID: 7703280683908287722}
 --- !u!114 &3052243716888542678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,8 +137,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  points: 1000
+  scoreEvent: {fileID: 11400000, guid: 20fe2f1c56b058a4db90f6313d67b2e6, type: 2}
   destroyEffect: {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8, type: 3}
   destroySound: {fileID: 1741166469394831728}
+  weapon: {fileID: 6521192218286555803}
+  maxFireRate: 1
+  minFireRate: 2
 --- !u!82 &1741166469394831728
 AudioSource:
   m_ObjectHideFlags: 0
@@ -132,7 +154,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 68a34627ce6c1324a891b0dda7baee20, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c5354b85507e29244975126fe234f8c5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -140,7 +162,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -218,3 +240,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &27494548017205517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7703280683908287722}
+  m_Layer: 0
+  m_Name: Firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7703280683908287722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27494548017205517}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -1.09, z: 6.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4243327588238360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
