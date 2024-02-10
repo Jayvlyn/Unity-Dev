@@ -25,6 +25,7 @@ public class PlayerShip : MonoBehaviour, IDamagable
 	{
         scoreEvent.Subscribe(AddPoints);
         health.value = 100;
+        score.value = score.initialValue;
 	}
 
 

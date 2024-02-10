@@ -9,6 +9,16 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+        if (items[0] as Weapon)
+        {
+            ((Weapon)items[0]).weaponData.fireRate = 0.4f;
+        }
+
+        if (items[1] as Weapon)
+        {
+            ((Weapon)items[1]).weaponData.fireRate = 0.1f;
+        }
+
         currentItem = items[0];
         currentItem.Equip();
     }

@@ -7,8 +7,10 @@ using Unity.Mathematics;
 public class SplineFollower : MonoBehaviour
 {
     [SerializeField] SplineContainer splineContainer;
+    [SerializeField] GameObject endPanel;
     public float speed = 1.0f;
     public float tDistance = 0; // distance along spline (0-1)
+
 
     //public float speed { get; set; }
 
@@ -30,6 +32,10 @@ public class SplineFollower : MonoBehaviour
     {
         distance += speed * Time.deltaTime;
         UpdateTransform(math.frac(tDistance));
+        if(tDistance >= 0.98)
+        {
+            if(endPanel != null) endPanel.SetActive(true);
+        }
     }
 
     void UpdateTransform(float t)

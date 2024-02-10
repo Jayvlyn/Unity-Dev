@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class SpeedPickup : SpacePickup
 {
-	protected override void OnTriggerEnter(Collider other)
+	[SerializeField] private float speedMod = 2f;
+	private SplineFollower playerSplineFollower;
+	
+
+
+    protected override void OnTriggerEnter(Collider other)
 	{
-		Debug.Log("speed pickup");
 		if (other.gameObject.TryGetComponent(out KinematicController cont))
 		{
-			cont.speed *= 2;
-			Debug.Log("speed doubled");
+			cont.speed *= speedMod;
+			try
+			{
+				playerSplineFollower = cont.gameObject.GetComponentInParent<SplineFollower>();
+				if(playerSplineFollower != null)
+				{
+					playerSplineFollower.speed *= speedMod;
+				}
+			}catch{}
 		}
+		
 		base.OnTriggerEnter(other);
 	}
 }
