@@ -42,7 +42,7 @@ public class PlayerShip : MonoBehaviour, IDamagable
 
     private void OnTriggerEnter(Collider other)
     {
-
+        if (other.gameObject.layer == 9) Death();
 	}
 
     private IEnumerator RestartTimer()

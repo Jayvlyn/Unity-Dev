@@ -33,10 +33,10 @@ public class EnemyShip : MonoBehaviour, IDamagable
             scoreEvent?.RaiseEvent(points);
 
             // destroy ship
-            destroySound.Play();
+            if(destroySound != null)destroySound.Play();
             Instantiate(destroyEffect, transform, false);
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<SphereCollider>().enabled = false;
+			if (TryGetComponent(out MeshRenderer renderer)) renderer.enabled = false;
+			if (TryGetComponent(out SphereCollider collider)) collider.enabled = false;
         }       
     }
 

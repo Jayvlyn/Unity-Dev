@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694fca17f6cd9e1418fcf8bad2f178e2, type: 3}
   m_Name: RocketAmmo
   m_EditorClassIdentifier: 
-  ammoType: 0
+  ammoType: 1
   lifetime: 4
   damage: 50
-  destroyOnImpact: 1
+  destroyOnImpact: 0
   impactPrefab: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
   force: 40
   forceMode: 2
