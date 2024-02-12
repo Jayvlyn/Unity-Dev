@@ -34,7 +34,7 @@ public class EnemyShip : MonoBehaviour, IDamagable
 
             // destroy ship
             if(destroySound != null)destroySound.Play();
-            Instantiate(destroyEffect, transform, false);
+            if(destroyEffect != null)Instantiate(destroyEffect, transform, false);
 			if (TryGetComponent(out MeshRenderer renderer)) renderer.enabled = false;
 			if (TryGetComponent(out SphereCollider collider)) collider.enabled = false;
         }       

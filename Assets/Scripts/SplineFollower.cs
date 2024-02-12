@@ -32,7 +32,7 @@ public class SplineFollower : MonoBehaviour
     {
         distance += speed * Time.deltaTime;
         UpdateTransform(math.frac(tDistance));
-        if(tDistance >= 0.98)
+        if(tDistance >= 0.995)
         {
             if(endPanel != null) endPanel.SetActive(true);
         }

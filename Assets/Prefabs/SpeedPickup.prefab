@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4537330496004528874}
   - component: {fileID: 3746043394867911458}
   - component: {fileID: 5227284637638720159}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpeedPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,6 +101,7 @@ MonoBehaviour:
   clip: {fileID: 0}
   mesh: {fileID: 0}
   pickedUp: 0
+  speedMod: 2
 --- !u!33 &3746043394867911458
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -129,7 +130,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4cee7a5983b187943adc589b9cb1f084, type: 2}
+  - {fileID: 2100000, guid: 3c69d4503cf3b2144b42ca2f7faeac13, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
